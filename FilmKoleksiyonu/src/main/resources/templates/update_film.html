@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Film Düzenle</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+	crossorigin="anonymous" />
+	<style>
+
+form{
+text-align:center;
+}
+
+h2{
+text-align:center;
+}
+
+.fa-chevron-circle-left{
+color:black;
+}
+
+</style>
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="http://localhost:8080/">Beyaz Perde</a>
+ 
+</nav>
+<div class="container">
+			
+<br>
+			<h2>
+				<a th:href="@{/}"> <i class="fas fa-chevron-circle-left"></i></a>
+				Film Düzenle
+			</h2>
+			<br>
+
+			<form action="#" th:action="@{/FilmKaydet}" th:object="${film}"
+				method="POST">
+
+
+				
+	<div class="form-group">			<input type="hidden" th:field="*{film_id}" /> <input type="text" th:field="*{film_ad}" class="form-control"></div> 
+				
+	<div class="form-group">			<input type="text" th:field="*{yapim_yil}" class="form-control"> </div>
+				
+	<div class="form-group">			<input type="text" th:field="*{film_kategori}" class="form-control"></div>
+				
+	<div class="form-group">			<input type="text" th:field="*{IMDb}" class="form-control"> </div>
+				
+	<div class="form-group">			<input type="text" th:field="*{film_aciklama}" class="form-control"></div>
+				
+	<div class="form-group">			<input type="text" th:field="*{film_yonetmen}" class="form-control"> </div>
+				
+	<div class="form-group">	     	<input type="text" th:field="*{senarist}" class="form-control"></div>
+				
+	<div class="form-group">			<input type="text" th:field="*{film_oyuncu}" class="form-control"></div>
+				
+	<div class="form-group">			<input type="text" th:field="*{film_dil}" class="form-control"></div>
+				
+	<div class="form-group">			<input type="text" th:field="*{film_media}" class="form-control"></div>
+
+
+
+				<button type="submit" class="btn btn-outline-success btn-lg">Düzenle</button>
+			</form>
+
+			<hr>
+
+		</div>
+</body>
+</html>
